@@ -1,0 +1,14 @@
+[Unit]
+Description=bot - Telegram bot
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node bot.js
+ExecReload=/usr/bin/node bot.js
+WorkingDirectory=/bot2/
+KillMode=process
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
