@@ -17,14 +17,14 @@ bot.start(async (ctx) => {
   ctx.editOrReply(`Привет ${ctx.from.first_name}! Выберите сериал: `, {
     reply_markup: {
         inline_keyboard: [
-            [ { text: "Солдаты", callback_data: "soldati" }]
-          ]
+          [ { text: "Солдаты", callback_data: "soldati" }]
+        ]
     }
     
   }).catch(e => {});
 })
 
-const soldatiCmd = (ctx) => { 
+bot.command('soldati', (ctx) => { 
   ctx.editOrReply('Сезоны', {
     reply_markup: {
         inline_keyboard: [
@@ -33,13 +33,12 @@ const soldatiCmd = (ctx) => {
     }
     
   }).catch(e => {});
-};
+})
 
 bot.command('soldati_season1', (ctx) => { 
   ctx.editOrReply('Все серии 1 сезона:\n 1 серия: (ссылка)\n 2 серия: (ссылка)...').catch(e => {});
 })
 
-bot.command('soldati', soldatiCmd);
 
 bot.launch();
 
